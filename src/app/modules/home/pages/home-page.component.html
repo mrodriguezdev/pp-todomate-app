@@ -30,8 +30,8 @@
                     </div>
 
                     <div class="col-md-4">
-                        <label for="dateDue" class="form-label">Fecha de Caducidad:</label>
-                        <input type="date" formControlName="dateDue" class="form-control" id="dateDue">
+                        <label for="dueDate" class="form-label">Fecha de Caducidad:</label>
+                        <input type="date" formControlName="dueDate" class="form-control" id="dueDate">
                     </div>
 
                     <div class="col-12">
@@ -46,9 +46,10 @@
     <div class="card">
         <div class="card-body">
             <h2 class="card-title">Tareas Pendientes</h2>
-            <table *ngIf="tareas && tareas.length > 0" class="table table-hover">
+            <table *ngIf="tasks && tasks.length > 0" class="table table-hover">
                 <thead>
                     <tr>
+                        <th>Id</th>
                         <th>Título</th>
                         <th>Descripción</th>
                         <th>Prioridad</th>
@@ -59,15 +60,15 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let tarea of tareas">
-                        <td>{{ tarea.titulo }}</td>
-                        <td>{{ tarea.descripcion }}</td>
-                        <td>{{ tarea.prioridad }}</td>
-                        <td>{{ tarea.fechaInicio }}</td>
-                        <td>{{ tarea.fechaCaducidad }}</td>
-                        <td>{{ tarea.completado ? 'Sí' : 'No' }}</td>
+                    <tr *ngFor="let task of tasks">
+                        <td>{{ task.id }}</td>
+                        <td>{{ task.title }}</td>
+                        <td>{{ task.description }}</td>
+                        <td>{{ task.priority }}</td>
+                        <td>{{ task.creationDate }}</td>
+                        <td>{{ task.dueDate }}</td>
+                        <td>{{ task.completed ? 'Sí' : 'No' }}</td>
                         <td>
-                            <button class="btn btn-warning btn-sm">Editar</button>
                             <button class="btn btn-danger btn-sm">Borrar</button>
                         </td>
                     </tr>
@@ -75,7 +76,7 @@
             </table>
         </div>
 
-        <div *ngIf="!tareas || tareas.length === 0" class="text-center">
+        <div *ngIf="!tasks || tasks.length === 0" class="text-center">
             <img src="../../../../assets/images/no-task.png" alt="No hay tareas" width="100" height="100">
             <p class="lead text-muted">¡Sin tareas por ahora!</p>
         </div>
