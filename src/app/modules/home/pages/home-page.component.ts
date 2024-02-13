@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { NewTask } from '@core/models/NewTask';
 import { Task } from '@core/models/Task';
-import { TaskService } from '@shared/services/task.service';
+import { TaskService } from '@shared/services/task/task.service';
 
 @Component({
   selector: 'app-home-page',

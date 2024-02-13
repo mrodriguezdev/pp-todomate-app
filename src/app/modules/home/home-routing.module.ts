@@ -4,12 +4,12 @@ import { HomePageComponent } from './pages/home-page.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'home',
     component: HomePageComponent
   },
   {
     path: '**',
-    redirectTo: ''
+    redirectTo: 'home'
   }
 ];
 
