@@ -4,5 +4,5 @@ export interface NewTask {
     creationDate: string;
     dueDate: string;
     priority: "Alta" | "Media" | "Baja";
-    usuario: string;
+    user_id: number;
 }
