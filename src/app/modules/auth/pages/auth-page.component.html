@@ -1,37 +1,80 @@
-<div class="container vh-100 d-flex align-items-center justify-content-center">
-    <div class="card p-4 w-50">
-        <h2 class="text-center mb-4">Iniciar sesión</h2>
+<section class="row vh-100 g-0">
 
-        <form [formGroup]="loginForm" (ngSubmit)="signIn()">
-            <div class="mb-3">
-                <label for="username" class="form-label">Username:</label>
-                <input type="text" class="form-control" id="username" formControlName="username">
-            </div>
+    <!-- Left side -->
+    <div class="col-lg-6 position-relative d-none d-lg-block">
+        <div class="bg-holder">
 
-            <div class="mb-3 position-relative">
-                <label for="password" class="form-label">Password:</label>
-                <div class="input-group">
-                    <input type="password" class="form-control" id="password" formControlName="password">
-                    <span class="input-group-text">
-                        <i class=" fa-solid fa-eye"></i>
-                    </span>
-                </div>
-
-                <div class="d-flex justify-content-between align-items-center mt-2">
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="recordar">
-                        <label class="form-check-label" for="recordar">Remember me</label>
-                    </div>
-
-                    <div>
-                        <a [routerLink]="['/','auth']">Forgot Password?</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="d-grid mb-3">
-                <button type="submit" class="btn btn-primary">Login</button>
-            </div>
-        </form>
+        </div>
     </div>
-</div>
+    <!-- Left side -->
+
+    <!-- Right side -->
+    <div class="col-lg-6">
+        <div class="row align-items-center justify-content-center h-100 g-0 px-4 px-sm-0">
+
+            <div class="col col-sm-6 col-lg-7 col-xl-6">
+                <!-- Logo -->
+                <a href="" class="d-flex justify-content-center mb-4">
+                    <img src="" alt="" width="60">
+                </a>
+                <!-- Logo -->
+
+                <div class="text-center mb-5">
+                    <h3 class="fw-bold">Log In</h3>
+                    <p class="text-secondary">Get access to your account</p>
+                </div>
+
+                <!-- Social Login -->
+                <button class="btn btn-outline-secondary btn-outline-custom btn-lg w-100 mb-3">
+                    <i class='bx bxl-google text-danger me-1 fs-7'></i> Login with Google
+                </button>
+                <button class="btn btn-outline-secondary btn-outline-custom btn-lg w-100 mb-3">
+                    <i class='bx bxl-facebook-circle text-primary me-1 fs-7'></i> Login with Facebook
+                </button>
+                <!-- Social Login -->
+
+                <!-- Divider -->
+                <div class="position-relative">
+                    <hr class="text-secondary divider">
+                    <div class="divider-content-center">or</div>
+                </div>
+                <!-- Divider -->
+
+                <!-- Form -->
+                <form [formGroup]="loginForm">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">
+                            <i class='bx bx-user'></i>
+                        </span>
+                        <input type="text" class="form-control form-control-lg fs-6" name="username"
+                            placeholder="Username" formControlName="username">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">
+                            <i class='bx bx-lock-alt'></i>
+                        </span>
+                        <input type="password" class="form-control form-control-lg fs-6" name="password"
+                            placeholder="Password" formControlName="password">
+                    </div>
+                    <div class="input-group mb-3 d-flex justify-content-between">
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" name="formCheck" id="formCheck">
+                            <label for="formCheck" class="form-check-label text-secondary"><small>Remember
+                                    Me</small></label>
+                        </div>
+                        <div>
+                            <small><a [href]="['auth']">Forgot password?</a></small>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary btn-lg w-100 mb-3" (click)="signIn()">Login</button>
+                </form>
+                <!-- Form -->
+                <div class="text-center">
+                    <small>Don't have an account? <a [href]="['auth']" class="fw-bold">Sign up</a></small>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Right side -->
+</section>
