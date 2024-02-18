@@ -29,6 +29,17 @@ export class NotificationService {
     });
   }
 
+  showWarningNotification(text: string) {
+    Swal.fire({
+      icon: 'warning',
+      title: 'Caution',
+      text: text,
+      showConfirmButton: true,
+      footer: 'Take appropriate action if needed.',
+      timer: 2500,
+    });
+  }
+
   showLoadNotification(title: string) {
     const swalWithLoading = Swal.mixin({
       title: title,

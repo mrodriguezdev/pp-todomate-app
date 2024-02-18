@@ -19,7 +19,7 @@ export class ErrorhandlerInterceptor implements HttpInterceptor {
       catchError((error: HttpErrorResponse) => {
         const content = error?.error?.content || 'Unexpected error';
         console.error('An error occurred while processing your request. Details: ', content);
-        this.notificationService.showErrorNotification(content);
+        this.notificationService.showErrorNotification('Unexpected error');
         return throwError(error);
       })
     );

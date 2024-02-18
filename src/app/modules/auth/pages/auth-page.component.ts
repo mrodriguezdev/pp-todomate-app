@@ -27,6 +27,10 @@ export class AuthPageComponent {
           next: () => {
             this.router.navigate(['/']);
             this.notificationService.hideAlert();
+          },
+          error: (err: any) => {
+            const content = err?.error?.content;
+            err.status == 400 || 404 ? this.notificationService.showWarningNotification(content) : this.notificationService.showErrorNotification('Unexpected error');
           }
         });
     }
